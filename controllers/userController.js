@@ -204,7 +204,6 @@ const registerUser = asyncHandler(async (req, res) => {
         res.status(201).json({
             message: 'User registered successfully',
             user: {
-                id: user._id,
                 name: user.name,
                 email: user.email,
                 businessName: user.businessName,
@@ -217,7 +216,6 @@ const registerUser = asyncHandler(async (req, res) => {
         res.status(201).json({
             message: 'User registered successfully, but failed to send email to admin',
             user: {
-                id: user._id,
                 name: user.name,
                 email: user.email,
                 businessName: user.businessName,
