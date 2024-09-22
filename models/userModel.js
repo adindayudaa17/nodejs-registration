@@ -1,40 +1,47 @@
 const mongoose = require('mongoose');
 
 const userSchema = new mongoose.Schema({
-    name: {
+    businessName: {
         type: String,
         required: true,
-        trim: true
+    },
+    businessManager: {
+        type: String,
+        required: true,
     },
     email: {
         type: String,
         required: true,
         unique: true,
-        trim: true
-    },
-    password: {
-        type: String,
-        required: true,
-    },
-    phone: {
-        type: String,
-        required: true,
-    },
-    businessName: {
-        type: String,
-        required: true,
-    },
-    businessType: {
-        type: String,
-        required: true,
+        trim: true,
     },
     businessAddress: {
         type: String,
         required: true,
     },
+    bankName: {
+        type: String,
+        required: true,
+    },
+    bankLocation: {
+        type: String,
+        required: true,
+    },
+    bankNumber: {
+        type: Number,
+        required: true,
+    },
+    bankAccount: {
+        type: String,
+        required: true,
+    },
     // Field untuk menyimpan informasi dokumen
     documents: {
-        suratIzinUsaha: {
+        companyLogo: {
+            fileName: String,
+            filePath: String,
+        },
+        nidTdp: {
             fileName: String,
             filePath: String,
         },
@@ -42,10 +49,26 @@ const userSchema = new mongoose.Schema({
             fileName: String,
             filePath: String,
         },
+        sipNib: {
+            fileName: String,
+            filePath: String,
+        },
         ktp: {
             fileName: String,
             filePath: String,
-        }
+        },
+        aktaPendirian: {
+            fileName: String,
+            filePath: String,
+        },
+        aktaPengesahanPendirian: {
+            fileName: String,
+            filePath: String,
+        },
+        othersFile: {
+            fileName: String,
+            filePath: String,
+        },
     },
     isActive: {
         type: Boolean,

@@ -4,11 +4,16 @@ const upload = require('../middlewares/uploadMiddleware'); // Import middleware 
 
 const router = express.Router();
 
-// Tambahkan middleware upload untuk menangani file upload
+// Add upload middleware to handle file uploads
 router.post('/register', upload.fields([
-    { name: 'suratIzinUsaha', maxCount: 1 },
+    { name: 'companyLogo', maxCount: 1 },
+    { name: 'nidTdp', maxCount: 1 },
     { name: 'npwp', maxCount: 1 },
-    { name: 'ktp', maxCount: 1 }
+    { name: 'sipNib', maxCount: 1 },
+    { name: 'ktp', maxCount: 1 },
+    { name: 'aktaPendirian', maxCount: 1 },
+    { name: 'aktaPengesahanPendirian', maxCount: 1 },
+    { name: 'othersFile', maxCount: 1 }
 ]), registerUser);
 
 router.post('/approve/:token', approveUser);
