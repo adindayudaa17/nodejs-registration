@@ -8,6 +8,11 @@ const app = express();
 
 app.use(cors({ origin: process.env.FE_URL }));
 
+app.use((req, res, next) => {
+    console.log(`${req.method} ${req.url}`);
+    next();
+});
+
 // Middleware untuk parsing JSON
 app.use(express.json());
 
